@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exhibitions | Artisan Museum</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🏛️</span>
+        <span class="logo-text">Artisan Museum</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="exhibitions.html" class="nav-link active">Exhibitions</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="book-tour.html" class="nav-link nav-cta">Book a Tour</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="page-header-overlay"></div>
+    <div class="container">
+      <h1 class="page-title">Exhibitions</h1>
+      <p class="page-subtitle">Discover our current and upcoming exhibitions featuring art from around the world</p>
+    </div>
+  </header>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="current">Current</button>
+        <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+        <button class="filter-btn" data-filter="permanent">Permanent</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exhibitions Grid -->
+  <section class="exhibitions-section section">
+    <div class="container">
+      <h2 class="subsection-title">Current Exhibitions</h2>
+      <div class="exhibitions-grid-large">
+        <article class="exhibition-card-large" data-category="current">
+          <div class="exhibition-image-large">
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=500&fit=crop" alt="Ancient Egyptian artifacts">
+            <span class="exhibition-badge">Featured</span>
+          </div>
+          <div class="exhibition-content-large">
+            <span class="exhibition-category">Ancient History</span>
+            <h3 class="exhibition-title-large">Treasures of Ancient Egypt</h3>
+            <p class="exhibition-desc-large">
+              Journey back 3,000 years to explore the magnificent world of ancient Egypt. This landmark exhibition 
+              features over 200 authentic artifacts including golden jewelry, intricate sculptures, and rare papyrus 
+              scrolls from the tombs of pharaohs. Discover the secrets of mummification, explore the daily life of 
+              ancient Egyptians, and marvel at treasures that have survived millennia.
+            </p>
+            <div class="exhibition-details">
+              <div class="detail-item">
+                <span class="detail-icon">📅</span>
+                <div>
+                  <strong>Dates</strong>
+                  <p>October 15, 2024 - March 30, 2025</p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">📍</span>
+                <div>
+                  <strong>Location</strong>
+                  <p>East Wing, Galleries 1-5</p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎟️</span>
+                <div>
+                  <strong>Admission</strong>
+                  <p>Included with general admission</p>
+                </div>
+              </div>
+            </div>
+            <a href="book-tour.html" class="btn btn-primary">Book a Guided Tour</a>
+          </div>
+        </article>
+
+        <article class="exhibition-card-large" data-category="current">
+          <div class="exhibition-image-large">
+            <img src="https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=800&h=500&fit=crop" alt="Modern art installation">
+            <span class="exhibition-badge">New</span>
+          </div>
+          <div class="exhibition-content-large">
+            <span class="exhibition-category">Contemporary Art</span>
+            <h3 class="exhibition-title-large">Visions of Tomorrow</h3>
+            <p class="exhibition-desc-large">
+              Step into the future with this groundbreaking exhibition featuring cutting-edge digital art, 
+              immersive installations, and interactive experiences. Featuring works from 25 international artists, 
+              this exhibition explores themes of technology, humanity, and our collective future. Experience 
+              art that responds to your presence and challenges your perception of reality.
+            </p>
+            <div class="exhibition-details">
+              <div class="detail-item">
+                <span class="detail-icon">📅</span>
+                <div>
+                  <strong>Dates</strong>
+                  <p>November 1, 2024 - June 15, 2025</p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">📍</span>
+                <div>
+                  <strong>Location</strong>
+                  <p>Modern Gallery, Level 3</p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎟️</span>
+                <div>
+                  <strong>Admission</strong>
+                  <p>Special ticket: $10 additional</p>
+                </div>
+              </div>
+            </div>
+            <a href="book-tour.html" class="btn btn-primary">Book a Guided Tour</a>
+          </div>
+        </article>
+      </div>
+
+      <h2 class="subsection-title">Upcoming Exhibitions</h2>
+      <div class="exhibitions-grid">
+        <article class="exhibition-card" data-category="upcoming">
+          <div class="exhibition-image">
+            <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=500&h=350&fit=crop" alt="Renaissance paintings">
+            <span class="exhibition-badge upcoming">Coming Soon</span>
+          </div>
+          <div class="exhibition-content">
+            <span class="exhibition-category">Renaissance</span>
+            <h3 class="exhibition-title">Masters of the Renaissance</h3>
+            <p class="exhibition-desc">Masterworks from the Italian Renaissance featuring rare pieces from private collections worldwide.</p>
+            <div class="exhibition-meta">
+              <span>📅 Opens January 2025</span>
+              <span>📍 Grand Hall</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="exhibition-card" data-category="upcoming">
+          <div class="exhibition-image">
+            <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=500&h=350&fit=crop" alt="Japanese art">
+            <span class="exhibition-badge upcoming">Coming Soon</span>
+          </div>
+          <div class="exhibition-content">
+            <span class="exhibition-category">Asian Art</span>
+            <h3 class="exhibition-title">Harmony in Nature: Japanese Art</h3>
+            <p class="exhibition-desc">Explore the delicate beauty of Japanese art through paintings, ceramics, and textiles spanning 500 years.</p>
+            <div class="exhibition-meta">
+              <span>📅 Opens February 2025</span>
+              <span>📍 West Wing</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="exhibition-card" data-category="upcoming">
+          <div class="exhibition-image">
+            <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=500&h=350&fit=crop" alt="Abstract art">
+            <span class="exhibition-badge upcoming">Coming Soon</span>
+          </div>
+          <div class="exhibition-content">
+            <span class="exhibition-category">Modern Art</span>
+            <h3 class="exhibition-title">Abstract Expressions</h3>
+            <p class="exhibition-desc">A celebration of abstract expressionism featuring works by Pollock, Rothko, and de Kooning.</p>
+            <div class="exhibition-meta">
+              <span>📅 Opens March 2025</span>
+              <span>📍 North Gallery</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h2 class="subsection-title">Permanent Collections</h2>
+      <div class="exhibitions-grid">
+        <article class="exhibition-card" data-category="permanent">
+          <div class="exhibition-image">
+            <img src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?w=500&h=350&fit=crop" alt="Greek sculptures">
+            <span class="exhibition-badge permanent">Permanent</span>
+          </div>
+          <div class="exhibition-content">
+            <span class="exhibition-category">Classical Antiquity</span>
+            <h3 class="exhibition-title">Greek & Roman Sculptures</h3>
+            <p class="exhibition-desc">Our renowned collection of classical sculptures including marble statues and bronze figures.</p>
+            <div class="exhibition-meta">
+              <span>📅 Always on display</span>
+              <span>📍 Classical Wing</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="exhibition-card" data-category="permanent">
+          <div class="exhibition-image">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=500&h=350&fit=crop" alt="Impressionist paintings">
+            <span class="exhibition-badge permanent">Permanent</span>
+          </div>
+          <div class="exhibition-content">
+            <span class="exhibition-category">Impressionism</span>
+            <h3 class="exhibition-title">Impressionist Masters</h3>
+            <p class="exhibition-desc">Works by Monet, Renoir, Degas, and other masters of the Impressionist movement.</p>
+            <div class="exhibition-meta">
+              <span>📅 Always on display</span>
+              <span>📍 Impressionist Gallery</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="exhibition-card" data-category="permanent">
+          <div class="exhibition-image">
+            <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=500&h=350&fit=crop" alt="Medieval artifacts">
+            <span class="exhibition-badge permanent">Permanent</span>
+          </div>
+          <div class="exhibition-content">
+            <span class="exhibition-category">Medieval</span>
+            <h3 class="exhibition-title">Medieval Treasures</h3>
+            <p class="exhibition-desc">Armor, manuscripts, religious artifacts, and decorative arts from the Middle Ages.</p>
+            <div class="exhibition-meta">
+              <span>📅 Always on display</span>
+              <span>📍 Medieval Hall</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter section section-dark">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter for exhibition updates and exclusive events</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-icon">🏛️</span>
+            <span class="logo-text">Artisan Museum</span>
+          </a>
+          <p>Preserving history, inspiring futures. Visit us and discover the beauty of human creativity.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="book-tour.html">Book a Tour</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="#">Directions</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Group Visits</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>📧 info@artisanmuseum.com</p>
+          <p>📞 +1 (555) 123-4567</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Artisan Museum. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

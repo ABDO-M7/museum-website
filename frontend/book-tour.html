@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Tour | Artisan Museum</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🏛️</span>
+        <span class="logo-text">Artisan Museum</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="exhibitions.html" class="nav-link">Exhibitions</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="book-tour.html" class="nav-link nav-cta active">Book a Tour</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header page-header-booking">
+    <div class="page-header-overlay"></div>
+    <div class="container">
+      <h1 class="page-title">Book a Tour</h1>
+      <p class="page-subtitle">Experience the museum with our expert guides</p>
+    </div>
+  </header>
+
+  <!-- Booking Section -->
+  <section class="booking-section section">
+    <div class="container">
+      <div class="booking-grid">
+        <!-- Booking Form -->
+        <div class="booking-form-container">
+          <div class="form-header">
+            <h2>Reserve Your Visit</h2>
+            <p>Fill out the form below to book a guided tour. All fields marked with * are required.</p>
+          </div>
+
+          <form id="bookingForm" class="booking-form" novalidate>
+            <div class="form-group">
+              <label for="visitorName">Full Name *</label>
+              <input 
+                type="text" 
+                id="visitorName" 
+                name="visitorName" 
+                placeholder="Enter your full name"
+                required
+                minlength="2"
+              >
+              <span class="error-message" id="visitorNameError"></span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  placeholder="your@email.com"
+                  required
+                >
+                <span class="error-message" id="emailError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  placeholder="+1 (555) 123-4567"
+                  required
+                >
+                <span class="error-message" id="phoneError"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="visitDate">Visit Date *</label>
+                <input 
+                  type="date" 
+                  id="visitDate" 
+                  name="visitDate"
+                  required
+                >
+                <span class="error-message" id="visitDateError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="numberOfVisitors">Number of Visitors *</label>
+                <select id="numberOfVisitors" name="numberOfVisitors" required>
+                  <option value="">Select</option>
+                  <option value="1">1 Person</option>
+                  <option value="2">2 People</option>
+                  <option value="3">3 People</option>
+                  <option value="4">4 People</option>
+                  <option value="5">5 People</option>
+                  <option value="6">6-10 People</option>
+                  <option value="11">11-15 People</option>
+                  <option value="16">16-20 People</option>
+                </select>
+                <span class="error-message" id="numberOfVisitorsError"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="tourType">Tour Type *</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="tourType" value="guided" required>
+                  <span class="radio-custom"></span>
+                  <span class="radio-text">
+                    <strong>Guided Tour</strong>
+                    <small>2 hours with expert guide - $15/person</small>
+                  </span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="tourType" value="self-guided">
+                  <span class="radio-custom"></span>
+                  <span class="radio-text">
+                    <strong>Self-Guided Tour</strong>
+                    <small>Audio guide included - $5/person</small>
+                  </span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="tourType" value="private">
+                  <span class="radio-custom"></span>
+                  <span class="radio-text">
+                    <strong>Private Tour</strong>
+                    <small>Exclusive experience - $200 flat rate</small>
+                  </span>
+                </label>
+              </div>
+              <span class="error-message" id="tourTypeError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="specialRequests">Special Requests (Optional)</label>
+              <textarea 
+                id="specialRequests" 
+                name="specialRequests" 
+                rows="4"
+                placeholder="Any accessibility needs, language preferences, or special requests..."
+                maxlength="500"
+              ></textarea>
+              <span class="char-count"><span id="charCount">0</span>/500</span>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                <span class="btn-text">Book Tour</span>
+                <span class="btn-loader" style="display: none;">
+                  <span class="loader"></span>
+                  Processing...
+                </span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Success Message -->
+          <div id="successMessage" class="success-message" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h3>Booking Confirmed!</h3>
+            <p>Thank you for your reservation. A confirmation email has been sent to your email address.</p>
+            <div class="booking-details" id="bookingDetails"></div>
+            <a href="index.html" class="btn btn-outline">Return to Home</a>
+          </div>
+        </div>
+
+        <!-- Tour Info Sidebar -->
+        <aside class="booking-sidebar">
+          <div class="sidebar-card">
+            <h3>Tour Information</h3>
+            <div class="tour-info-list">
+              <div class="tour-info-item">
+                <span class="info-icon">🕐</span>
+                <div>
+                  <strong>Duration</strong>
+                  <p>Guided: 2 hours<br>Self-guided: Flexible</p>
+                </div>
+              </div>
+              <div class="tour-info-item">
+                <span class="info-icon">🗣️</span>
+                <div>
+                  <strong>Languages</strong>
+                  <p>English, Spanish, French, Arabic, Chinese</p>
+                </div>
+              </div>
+              <div class="tour-info-item">
+                <span class="info-icon">♿</span>
+                <div>
+                  <strong>Accessibility</strong>
+                  <p>Wheelchair accessible, hearing loops available</p>
+                </div>
+              </div>
+              <div class="tour-info-item">
+                <span class="info-icon">📍</span>
+                <div>
+                  <strong>Meeting Point</strong>
+                  <p>Main Entrance Lobby</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>What's Included</h3>
+            <ul class="included-list">
+              <li>✓ Museum admission</li>
+              <li>✓ Expert guide (guided tours)</li>
+              <li>✓ Audio guide device</li>
+              <li>✓ Exhibition access</li>
+              <li>✓ Museum map</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card sidebar-card-highlight">
+            <h3>Need Help?</h3>
+            <p>Contact our visitor services team:</p>
+            <p><strong>📞 +1 (555) 123-4567</strong></p>
+            <p><strong>📧 tours@artisanmuseum.com</strong></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Bookings (Admin View - Optional) -->
+  <section class="recent-bookings section section-light" id="recentBookings" style="display: none;">
+    <div class="container">
+      <h2 class="section-title">Recent Bookings</h2>
+      <div class="bookings-table-container">
+        <table class="bookings-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Date</th>
+              <th>Visitors</th>
+              <th>Tour Type</th>
+              <th>Booked On</th>
+            </tr>
+          </thead>
+          <tbody id="bookingsTableBody">
+            <!-- Bookings will be loaded here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-icon">🏛️</span>
+            <span class="logo-text">Artisan Museum</span>
+          </a>
+          <p>Preserving history, inspiring futures. Visit us and discover the beauty of human creativity.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="book-tour.html">Book a Tour</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="#">Directions</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Group Visits</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>📧 info@artisanmuseum.com</p>
+          <p>📞 +1 (555) 123-4567</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Artisan Museum. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

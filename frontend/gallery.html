@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Artisan Museum</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🏛️</span>
+        <span class="logo-text">Artisan Museum</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="exhibitions.html" class="nav-link">Exhibitions</a></li>
+        <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+        <li><a href="book-tour.html" class="nav-link nav-cta">Book a Tour</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header page-header-gallery">
+    <div class="page-header-overlay"></div>
+    <div class="container">
+      <h1 class="page-title">Our Collection</h1>
+      <p class="page-subtitle">Explore over 50,000 artifacts spanning 5,000 years of human creativity</p>
+    </div>
+  </header>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="paintings">Paintings</button>
+        <button class="filter-btn" data-filter="sculptures">Sculptures</button>
+        <button class="filter-btn" data-filter="artifacts">Artifacts</button>
+        <button class="filter-btn" data-filter="photography">Photography</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="gallery-section section">
+    <div class="container">
+      <div class="gallery-grid">
+        <!-- Row 1 -->
+        <div class="gallery-item gallery-item-tall" data-category="paintings">
+          <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=600&fit=crop" alt="Impressionist painting">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Water Lilies</h3>
+              <p>Claude Monet, 1906</p>
+              <span class="gallery-category">Impressionism</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="sculptures">
+          <img src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?w=400&h=300&fit=crop" alt="Greek sculpture">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Apollo Belvedere</h3>
+              <p>Roman copy, 2nd century CE</p>
+              <span class="gallery-category">Classical</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="artifacts">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Egyptian artifact">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Golden Mask</h3>
+              <p>Ancient Egypt, 1323 BCE</p>
+              <span class="gallery-category">Ancient</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="gallery-item gallery-item-wide" data-category="paintings">
+          <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&h=400&fit=crop" alt="Renaissance painting">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>The School of Athens</h3>
+              <p>Raphael, 1509-1511</p>
+              <span class="gallery-category">Renaissance</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+          <img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=400&h=300&fit=crop" alt="Museum interior">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Grand Gallery</h3>
+              <p>Museum Architecture</p>
+              <span class="gallery-category">Photography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="gallery-item" data-category="sculptures">
+          <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=400&h=300&fit=crop" alt="Medieval sculpture">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Knight's Armor</h3>
+              <p>Germany, 15th century</p>
+              <span class="gallery-category">Medieval</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item gallery-item-tall" data-category="paintings">
+          <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=400&h=600&fit=crop" alt="Abstract painting">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Composition VIII</h3>
+              <p>Wassily Kandinsky, 1923</p>
+              <span class="gallery-category">Abstract</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="artifacts">
+          <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=400&h=300&fit=crop" alt="Japanese art">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>The Great Wave</h3>
+              <p>Hokusai, 1831</p>
+              <span class="gallery-category">Japanese</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="gallery-item" data-category="photography">
+          <img src="https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=400&h=300&fit=crop" alt="Modern installation">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Light Installation</h3>
+              <p>Contemporary Art</p>
+              <span class="gallery-category">Modern</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item gallery-item-wide" data-category="paintings">
+          <img src="https://images.unsplash.com/photo-1577720643272-265f09367456?w=800&h=400&fit=crop" alt="Baroque painting">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>The Night Watch</h3>
+              <p>Rembrandt, 1642</p>
+              <span class="gallery-category">Baroque</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 5 -->
+        <div class="gallery-item" data-category="sculptures">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Modern sculpture">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>The Thinker</h3>
+              <p>Auguste Rodin, 1904</p>
+              <span class="gallery-category">Modern</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="artifacts">
+          <img src="https://images.unsplash.com/photo-1569091791842-7cfb64e04797?w=400&h=300&fit=crop" alt="Ancient pottery">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Greek Amphora</h3>
+              <p>Athens, 5th century BCE</p>
+              <span class="gallery-category">Ancient</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+          <img src="https://images.unsplash.com/photo-1574182245530-967d9b3831af?w=400&h=300&fit=crop" alt="Art photography">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Museum Perspective</h3>
+              <p>Contemporary Photography</p>
+              <span class="gallery-category">Photography</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="paintings">
+          <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=400&h=300&fit=crop" alt="Portrait painting">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Portrait of a Lady</h3>
+              <p>Gustav Klimt, 1917</p>
+              <span class="gallery-category">Art Nouveau</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Load More -->
+      <div class="gallery-footer">
+        <button class="btn btn-outline" id="loadMoreBtn">Load More Artworks</button>
+        <p class="gallery-count">Showing 14 of 50,000+ items</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection Stats -->
+  <section class="collection-stats section section-dark">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-icon">🖼️</span>
+          <span class="stat-number">15,000+</span>
+          <span class="stat-label">Paintings</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">🗿</span>
+          <span class="stat-number">8,500+</span>
+          <span class="stat-label">Sculptures</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">🏺</span>
+          <span class="stat-number">20,000+</span>
+          <span class="stat-label">Artifacts</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">📷</span>
+          <span class="stat-number">6,500+</span>
+          <span class="stat-label">Photographs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-icon">🏛️</span>
+            <span class="logo-text">Artisan Museum</span>
+          </a>
+          <p>Preserving history, inspiring futures. Visit us and discover the beauty of human creativity.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="book-tour.html">Book a Tour</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="#">Directions</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Group Visits</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>📧 info@artisanmuseum.com</p>
+          <p>📞 +1 (555) 123-4567</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Artisan Museum. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
