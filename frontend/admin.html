@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Artisan Museum</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🏛️</span>
+        <span class="logo-text">Artisan Museum</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="exhibitions.html" class="nav-link">Exhibitions</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="book-tour.html" class="nav-link">Book a Tour</a></li>
+        <li><a href="admin.html" class="nav-link active nav-cta">Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="page-header-overlay"></div>
+    <div class="container">
+      <h1 class="page-title">Admin Dashboard</h1>
+      <p class="page-subtitle">Manage bookings and view database records</p>
+    </div>
+  </header>
+
+  <!-- Admin Dashboard -->
+  <section class="admin-section section">
+    <div class="container">
+      <!-- Database Connection Status -->
+      <div class="status-card" id="statusCard">
+        <div class="status-header">
+          <h2>Database Connection Status</h2>
+          <button class="btn btn-outline" id="refreshBtn" onclick="loadBookings()">
+            <span>🔄</span> Refresh
+          </button>
+        </div>
+        <div class="status-info">
+          <div class="status-item">
+            <span class="status-label">API Status:</span>
+            <span class="status-value" id="apiStatus">
+              <span class="loader-small"></span> Checking...
+            </span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Database:</span>
+            <span class="status-value" id="dbStatus">
+              <span class="loader-small"></span> Checking...
+            </span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Total Bookings:</span>
+            <span class="status-value" id="totalBookings">-</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Last Updated:</span>
+            <span class="status-value" id="lastUpdated">-</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistics Cards -->
+      <div class="stats-grid-admin">
+        <div class="stat-card-admin">
+          <div class="stat-icon-admin">📅</div>
+          <div class="stat-content">
+            <h3 id="todayBookings">0</h3>
+            <p>Today's Bookings</p>
+          </div>
+        </div>
+        <div class="stat-card-admin">
+          <div class="stat-icon-admin">👥</div>
+          <div class="stat-content">
+            <h3 id="totalVisitors">0</h3>
+            <p>Total Visitors</p>
+          </div>
+        </div>
+        <div class="stat-card-admin">
+          <div class="stat-icon-admin">🎫</div>
+          <div class="stat-content">
+            <h3 id="guidedTours">0</h3>
+            <p>Guided Tours</p>
+          </div>
+        </div>
+        <div class="stat-card-admin">
+          <div class="stat-icon-admin">🚶</div>
+          <div class="stat-content">
+            <h3 id="selfGuidedTours">0</h3>
+            <p>Self-Guided Tours</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bookings Table -->
+      <div class="bookings-section">
+        <div class="section-header-admin">
+          <h2>All Bookings</h2>
+          <div class="filter-controls">
+            <select id="tourTypeFilter" class="filter-select">
+              <option value="all">All Tour Types</option>
+              <option value="guided">Guided</option>
+              <option value="self-guided">Self-Guided</option>
+              <option value="private">Private</option>
+            </select>
+            <input type="date" id="dateFilter" class="filter-input" placeholder="Filter by date">
+          </div>
+        </div>
+
+        <div id="loadingMessage" class="loading-message">
+          <div class="loader"></div>
+          <p>Loading bookings...</p>
+        </div>
+
+        <div id="errorMessage" class="error-message-admin" style="display: none;">
+          <span class="error-icon">⚠️</span>
+          <div>
+            <h3>Connection Error</h3>
+            <p id="errorText"></p>
+            <button class="btn btn-primary" onclick="loadBookings()">Try Again</button>
+          </div>
+        </div>
+
+        <div id="bookingsContainer" style="display: none;">
+          <div class="table-responsive">
+            <table class="bookings-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Visitor Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Visit Date</th>
+                  <th>Visitors</th>
+                  <th>Tour Type</th>
+                  <th>Special Requests</th>
+                  <th>Booked On</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="bookingsTableBody">
+                <!-- Bookings will be loaded here -->
+              </tbody>
+            </table>
+          </div>
+
+          <div id="noBookings" class="no-bookings" style="display: none;">
+            <span class="empty-icon">📋</span>
+            <h3>No Bookings Found</h3>
+            <p>There are no bookings in the database yet.</p>
+            <a href="book-tour.html" class="btn btn-primary">Create First Booking</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking Detail Modal -->
+      <div id="bookingModal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Booking Details</h2>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+          </div>
+          <div class="modal-body" id="modalBody">
+            <!-- Booking details will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-icon">🏛️</span>
+            <span class="logo-text">Artisan Museum</span>
+          </a>
+          <p>Preserving history, inspiring futures. Visit us and discover the beauty of human creativity.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="exhibitions.html">Exhibitions</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="book-tour.html">Book a Tour</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>📧 info@artisanmuseum.com</p>
+          <p>📞 +966 50 123 4567</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Artisan Museum. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
